@@ -1,16 +1,28 @@
-def rearrange(arr, n ) :
-	j = 0
-	for i in range(0, n) :
-		if (arr[i] < 0) :
-			temp = arr[i]
-			arr[i] = arr[j]
-			arr[j]= temp
-			j = j + 1
-	print(arr)
-arr = [-1, 2, -3, 4, 5, 6, -7, 8, 9]
-n = len(arr)
-rearrange(arr, n)
+NumList = []
+Positive = []
+Negative = []
 
-OUTPUT::
+Number = int(input("Please enter the Total Number of List Elements : "))
+for i in range(1, Number + 1):
+    value = int(input("Please enter the Value of %d Element : " %i))
+    NumList.append(value)
 
-[-1, -3, -7, 4, 5, 6, 2, 8, 9]
+for j in range(Number):
+    if(NumList[j] >= 0):
+        Positive.append(NumList[j])
+    else:
+        Negative.append(NumList[j])
+
+print("Element in Positive List is : ", Positive)
+print("Element in Negative List is : ", Negative)
+
+output::
+
+Please enter the Total Number of List Elements : 5
+Please enter the Value of 1 Element : 34
+Please enter the Value of 2 Element : -23
+Please enter the Value of 3 Element : -1
+Please enter the Value of 4 Element : 24
+Please enter the Value of 5 Element : 45
+Element in Positive List is :  [34, 24, 45]
+Element in Negative List is :  [-23, -1]
